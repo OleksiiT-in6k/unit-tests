@@ -32,4 +32,15 @@ public class HamcrestAssertionsTest {
     public void nullValueMatcher() throws Exception {
         assertThat(new Object(), nullValue());
     }
+
+    @Test
+    public void checkHelloWorld()throws Exception{
+        String s="Hello World";
+        assertThat(s,both(startsWith("Hell")).and(endsWith("ld")));
+    }
+    @Test
+    public void checkEndHelloWorld()throws Exception{
+        String s="Hello World";
+        assertThat(s,endsWith("ld"));
+    }
 }
